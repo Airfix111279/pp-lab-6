@@ -9,9 +9,8 @@ public class Main {
     public static void main(String[] args) {
         Worker worker1 = new Worker("John", 2000, 1, "2020-01-01", "Developer");
         Worker worker2 = new Worker("Alice", 1800, 2, "2019-05-15", "Tester");
-        Worker worker3 = new Worker("Bob", 2200, 3, "2021-03-10", "Designer");
+        Worker worker3 = new Worker("Bob", 2200, 1, "2021-03-10", "Designer");
         Worker worker4 = new Worker("Emily", 1900, 4, "2018-11-20", "Project Manager");
-
         Manager manager = new Manager("Michael", 5000, 5, "2017-07-01", "Senior Manager");
 
         List<Employee> employees = new ArrayList<>();
@@ -22,11 +21,13 @@ public class Main {
         employees.add(manager);
 
         for (Employee employee : employees) {
-            employee.work();
-            System.out.println("- " + employee.getName() + " (ID: " + employee.hashCode() +
-                    ", Position: " + employee.getPosition() +
-                    ", Hire date: " + employee.getHireDate() +
-                    ", Salary: " + employee.getSalary() + ")");
+            System.out.println(employee.getName() + " has code: " + employee.hashCode());
+        }
+
+        for (Employee employee : employees) {
+            if (worker3.equals(employee)) {
+                System.out.println("Worker3 has the same id as " + employee.getName());
+            }
         }
     }
 }
